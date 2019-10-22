@@ -33,7 +33,7 @@ about:
   home: https://github.com/flying-sheep/get_version
   license: GPL-3.0
   license_family: GPL
-  license_file: LICENSE
+  license_file: {{ name }}-{{ version }}/LICENSE
   summary: 'Automatically use the latest “vX.X.X” Git tag as version in your Python package.'
   description: |
     A version helper in the spirit of versioneer.
