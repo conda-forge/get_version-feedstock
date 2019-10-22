@@ -8,11 +8,14 @@ package:
 source:
   url:  https://github.com/flying-sheep/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: ed320df3b0604ecab925f5e00290c09f85c169bc8f826bb263b0d82889be487c
+  folder: "{{ name }}-{{ version }}"
 
 build:
   noarch: python
-  number: 0
-  script: "{{ PYTHON }} -m flit install --deps none"
+  number: 1
+  script:
+    - cd "{{ name }}-{{ version }}"
+    - "{{ PYTHON }} -m flit install --deps none"
 
 requirements:
   host:
@@ -30,7 +33,7 @@ about:
   home: https://github.com/flying-sheep/get_version
   license: GPL-3.0
   license_family: GPL
-  license_file: LICENSE
+  license_file: {{ name }}-{{ version }}/LICENSE
   summary: 'Automatically use the latest “vX.X.X” Git tag as version in your Python package.'
   description: |
     A version helper in the spirit of versioneer.
