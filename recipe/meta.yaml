@@ -1,21 +1,21 @@
 {% set name = "get_version" %}
-{% set version = "2.1" %}
+{% set version = "2.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url:  https://github.com/flying-sheep/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: ed320df3b0604ecab925f5e00290c09f85c169bc8f826bb263b0d82889be487c
-  folder: "{{ name }}-{{ version }}"
+  url: https://github.com/flying-sheep/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: 2d027df9c70a1a40ada1e6efade3ced168d769088b03095c843a3a65af86de73
+  folder: {{ name }}-{{ version }}
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script:
     - cd "{{ name }}-{{ version }}"
-    - "{{ PYTHON }} -m flit install --deps none"
+    - {{ PYTHON }} -m flit install --deps none
 
 requirements:
   host:
@@ -34,7 +34,7 @@ about:
   license: GPL-3.0
   license_family: GPL
   license_file: {{ name }}-{{ version }}/LICENSE
-  summary: 'Automatically use the latest “vX.X.X” Git tag as version in your Python package.'
+  summary: Automatically use the latest “vX.X.X” Git tag as version in your Python package.
   description: |
     A version helper in the spirit of versioneer.
     Minimalistic and able to run without build step using pkg_resources.
