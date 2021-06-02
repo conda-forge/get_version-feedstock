@@ -20,10 +20,11 @@ build:
 requirements:
   host:
     - python >=3.6
-    - flit >=1.3
+    - flit >=2
+    - dunamai
   run:
     - python >=3.6
-    - setuptools
+    - dunamai
 
 test:
   imports:
