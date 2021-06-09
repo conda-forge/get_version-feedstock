@@ -15,7 +15,7 @@ build:
   number: 0
   script:
     - cd "{{ name }}-{{ version }}"
-    - {{ PYTHON }} -m flit install --deps none
+    - {{ PYTHON }} -m pip install --use-feature=in-tree-build .
 
 requirements:
   host:
