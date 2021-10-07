@@ -1,5 +1,5 @@
 {% set name = "get_version" %}
-{% set version = "3.5" %}
+{% set version = "3.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/flying-sheep/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e43e9c41a6b5ef72c289a5ccce0cfdbd1800665bac05ba49f24f8ce5cf6a842b
+  sha256: e2db57b926c735de6f2d3f68055e421000797008debeaffb7764adf2b6e8fa82
   folder: {{ name }}-{{ version }}
 
 build:
