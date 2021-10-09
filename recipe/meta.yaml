@@ -23,6 +23,7 @@ requirements:
     - flit >=1.3
   run:
     - python >=3.7
+    - git
     - dunamai
     - importlib_metadata
     - typing_extensions  # in reality just for python <3.8, but that would prevent `noarch`
