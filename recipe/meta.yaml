@@ -25,6 +25,7 @@ requirements:
     - python >=3.7
     - dunamai
     - importlib_metadata
+    - typing_extensions  # in reality just for python <3.8, but that would prevent `noarch`
 
 test:
   imports:
