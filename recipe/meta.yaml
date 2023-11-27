@@ -15,7 +15,7 @@ build:
   number: 0
   script:
     - cd "{{ name }}-{{ version }}"
-    - {{ PYTHON }} -m pip install --use-feature=in-tree-build .
+    - {{ PYTHON }} -m pip install .
 
 requirements:
   host:
