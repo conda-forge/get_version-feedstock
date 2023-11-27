@@ -1,13 +1,13 @@
 {% set name = "get_version" %}
-{% set version = "3.5.4" %}
+{% set version = "3.5.5" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name | lower }}
   version: {{ version }}
 
 source:
   url: https://github.com/flying-sheep/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: af86fb9873235d5aee3e5b6e85622cd1c72ef42758ab4b97e6cb59c34bb83fde
+  sha256: 25be900567cd89934cd275802da9f1ddfd526d55661489a985599ff101155726
   folder: {{ name }}-{{ version }}
 
 build:
@@ -15,18 +15,16 @@ build:
   number: 0
   script:
     - cd "{{ name }}-{{ version }}"
-    - {{ PYTHON }} -m pip install --use-feature=in-tree-build .
+    - {{ PYTHON }} -m pip install .
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.9
     - flit >=1.3
   run:
-    - python >=3.7
+    - python >=3.9
     - git
-    - dunamai
-    - importlib_metadata
-    - typing_extensions  # in reality just for python <3.8, but that would prevent `noarch`
+    - dunamai >=1.19.0
 
 test:
   imports:
